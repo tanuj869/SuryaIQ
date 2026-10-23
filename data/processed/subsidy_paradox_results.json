@@ -1,0 +1,103 @@
+{
+  "subsidy_amount_only": {
+    "features": [
+      "subsidy_per_install_rs",
+      "subsidy_released_cr"
+    ],
+    "loso_mae": 0.1944,
+    "loso_r2": -0.136
+  },
+  "implementation_quality_only": {
+    "features": [
+      "reg_to_app_ratio",
+      "app_per_lakh",
+      "n_districts",
+      "potential_utilization"
+    ],
+    "loso_mae": 0.1785,
+    "loso_r2": 0.091
+  },
+  "subsidy+impl+context (full)": {
+    "features": [
+      "subsidy_per_install_rs",
+      "subsidy_released_cr",
+      "reg_to_app_ratio",
+      "app_per_lakh",
+      "n_districts",
+      "potential_utilization",
+      "tariff_2kw_2025",
+      "solar_potential_gw",
+      "annual_ghi",
+      "re_share_2025",
+      "re_cagr_18_25"
+    ],
+    "loso_mae": 0.1721,
+    "loso_r2": 0.096
+  },
+  "feature_importance_full": [
+    {
+      "feature": "potential_utilization",
+      "importance": 0.227
+    },
+    {
+      "feature": "app_per_lakh",
+      "importance": 0.174
+    },
+    {
+      "feature": "re_share_2025",
+      "importance": 0.146
+    },
+    {
+      "feature": "subsidy_per_install_rs",
+      "importance": 0.114
+    },
+    {
+      "feature": "n_districts",
+      "importance": 0.062
+    },
+    {
+      "feature": "annual_ghi",
+      "importance": 0.06
+    },
+    {
+      "feature": "re_cagr_18_25",
+      "importance": 0.057
+    },
+    {
+      "feature": "tariff_2kw_2025",
+      "importance": 0.052
+    },
+    {
+      "feature": "solar_potential_gw",
+      "importance": 0.041
+    },
+    {
+      "feature": "subsidy_released_cr",
+      "importance": 0.039
+    },
+    {
+      "feature": "reg_to_app_ratio",
+      "importance": 0.029
+    }
+  ],
+  "model_comparison_full": {
+    "linear_regression": {
+      "loso_mae": 0.2194,
+      "loso_r2": -0.628
+    },
+    "random_forest": {
+      "loso_mae": 0.1721,
+      "loso_r2": 0.096
+    },
+    "gradient_boosting": {
+      "loso_mae": 0.1912,
+      "loso_r2": -0.058
+    },
+    "best_model": "random_forest"
+  },
+  "linear_baseline_full": {
+    "loso_mae": 0.2194,
+    "loso_r2": -0.628
+  },
+  "verdict": "implementation-quality features alone achieve MAE 0.1785 vs 0.1944 for subsidy-amount alone \u2014 supporting the subsidy-paradox hypothesis at state level (associational)."
+}

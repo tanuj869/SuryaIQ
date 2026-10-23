@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OS
+.DS_Store
+
+# Secrets (keep .env.example, never .env)
+.env
+
+# Generated data & run artifacts
+data/interim/
+evals/results/
+*.log

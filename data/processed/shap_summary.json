@@ -1,0 +1,581 @@
+{
+  "features": [
+    "tariff_growth_frac",
+    "annual_ghi",
+    "tariff_2kw_2024",
+    "tariff_2kw_2025",
+    "re_2025",
+    "installations"
+  ],
+  "base_value": 0.5492,
+  "by_state": {
+    "Andhra Pradesh": {
+      "prediction": 0.519,
+      "actual": 0.3539,
+      "shap": {
+        "tariff_growth_frac": -0.0257,
+        "annual_ghi": 0.0187,
+        "tariff_2kw_2024": -0.0019,
+        "tariff_2kw_2025": -0.0015,
+        "re_2025": 0.0016,
+        "installations": -0.0214
+      },
+      "values": {
+        "tariff_growth_frac": 0.0,
+        "annual_ghi": 5.123,
+        "tariff_2kw_2024": 4.5,
+        "tariff_2kw_2025": 4.5,
+        "re_2025": 12114.48,
+        "installations": 330815.0
+      }
+    },
+    "Arunachal Pradesh": {
+      "prediction": 0.1425,
+      "actual": 0.0149,
+      "shap": {
+        "tariff_growth_frac": -0.0338,
+        "annual_ghi": -0.2407,
+        "tariff_2kw_2024": -0.0033,
+        "tariff_2kw_2025": -0.002,
+        "re_2025": -0.0459,
+        "installations": -0.0811
+      },
+      "values": {
+        "tariff_growth_frac": 0.0,
+        "annual_ghi": 3.649,
+        "tariff_2kw_2024": 4.0,
+        "tariff_2kw_2025": 4.0,
+        "re_2025": 1270.46,
+        "installations": 1.0
+      }
+    },
+    "Assam": {
+      "prediction": 0.4266,
+      "actual": 0.4476,
+      "shap": {
+        "tariff_growth_frac": 0.0432,
+        "annual_ghi": -0.1234,
+        "tariff_2kw_2024": -0.0092,
+        "tariff_2kw_2025": -0.0248,
+        "re_2025": -0.0222,
+        "installations": 0.0139
+      },
+      "values": {
+        "tariff_growth_frac": 0.186,
+        "annual_ghi": 4.388,
+        "tariff_2kw_2024": 7.27,
+        "tariff_2kw_2025": 8.62,
+        "re_2025": 582.65,
+        "installations": 175146.0
+      }
+    },
+    "Bihar": {
+      "prediction": 0.3383,
+      "actual": 0.2308,
+      "shap": {
+        "tariff_growth_frac": -0.0551,
+        "annual_ghi": -0.0011,
+        "tariff_2kw_2024": -0.066,
+        "tariff_2kw_2025": -0.0509,
+        "re_2025": -0.0336,
+        "installations": -0.0042
+      },
+      "values": {
+        "tariff_growth_frac": -0.017,
+        "annual_ghi": 4.78,
+        "tariff_2kw_2024": 9.28,
+        "tariff_2kw_2025": 9.12,
+        "re_2025": 539.26,
+        "installations": 26128.0
+      }
+    },
+    "Chhattisgarh": {
+      "prediction": 0.5868,
+      "actual": 0.4894,
+      "shap": {
+        "tariff_growth_frac": 0.0306,
+        "annual_ghi": 0.0242,
+        "tariff_2kw_2024": 0.0026,
+        "tariff_2kw_2025": 0.0072,
+        "re_2025": -0.0331,
+        "installations": 0.0061
+      },
+      "values": {
+        "tariff_growth_frac": 0.049,
+        "annual_ghi": 5.163,
+        "tariff_2kw_2024": 4.52,
+        "tariff_2kw_2025": 4.74,
+        "re_2025": 1828.46,
+        "installations": 95299.0
+      }
+    },
+    "Goa": {
+      "prediction": 0.7207,
+      "actual": 0.7773,
+      "shap": {
+        "tariff_growth_frac": 0.0338,
+        "annual_ghi": 0.0758,
+        "tariff_2kw_2024": 0.0287,
+        "tariff_2kw_2025": 0.0251,
+        "re_2025": -0.0072,
+        "installations": 0.0152
+      },
+      "values": {
+        "tariff_growth_frac": 0.066,
+        "annual_ghi": 5.317,
+        "tariff_2kw_2024": 2.58,
+        "tariff_2kw_2025": 2.75,
+        "re_2025": 58.43,
+        "installations": 3556.0
+      }
+    },
+    "Gujarat": {
+      "prediction": 0.6317,
+      "actual": 0.6798,
+      "shap": {
+        "tariff_growth_frac": -0.0208,
+        "annual_ghi": 0.0849,
+        "tariff_2kw_2024": 0.0058,
+        "tariff_2kw_2025": 0.0056,
+        "re_2025": 0.0154,
+        "installations": -0.0085
+      },
+      "values": {
+        "tariff_growth_frac": 0.0,
+        "annual_ghi": 5.526,
+        "tariff_2kw_2024": 4.0,
+        "tariff_2kw_2025": 4.0,
+        "re_2025": 33393.03,
+        "installations": 811533.0
+      }
+    },
+    "Haryana": {
+      "prediction": 0.6669,
+      "actual": 0.6513,
+      "shap": {
+        "tariff_growth_frac": 0.0112,
+        "annual_ghi": 0.0784,
+        "tariff_2kw_2024": 0.0103,
+        "tariff_2kw_2025": 0.0096,
+        "re_2025": -0.003,
+        "installations": 0.0112
+      },
+      "values": {
+        "tariff_growth_frac": 0.017,
+        "annual_ghi": 5.225,
+        "tariff_2kw_2024": 3.48,
+        "tariff_2kw_2025": 3.54,
+        "re_2025": 2449.94,
+        "installations": 128189.0
+      }
+    },
+    "Himachal Pradesh": {
+      "prediction": 0.6549,
+      "actual": 0.7259,
+      "shap": {
+        "tariff_growth_frac": 0.0371,
+        "annual_ghi": 0.0159,
+        "tariff_2kw_2024": 0.0179,
+        "tariff_2kw_2025": 0.0161,
+        "re_2025": 0.0057,
+        "installations": 0.013
+      },
+      "values": {
+        "tariff_growth_frac": 0.224,
+        "annual_ghi": 4.7,
+        "tariff_2kw_2024": 5.27,
+        "tariff_2kw_2025": 6.45,
+        "re_2025": 12196.19,
+        "installations": 12812.0
+      }
+    },
+    "Jharkhand": {
+      "prediction": 0.4567,
+      "actual": 0.3855,
+      "shap": {
+        "tariff_growth_frac": -0.0246,
+        "annual_ghi": 0.0079,
+        "tariff_2kw_2024": -0.0135,
+        "tariff_2kw_2025": -0.0326,
+        "re_2025": -0.0293,
+        "installations": -0.0003
+      },
+      "values": {
+        "tariff_growth_frac": 0.0,
+        "annual_ghi": 4.749,
+        "tariff_2kw_2024": 7.3,
+        "tariff_2kw_2025": 7.3,
+        "re_2025": 434.06,
+        "installations": 3588.0
+      }
+    },
+    "Karnataka": {
+      "prediction": 0.4937,
+      "actual": 0.4279,
+      "shap": {
+        "tariff_growth_frac": -0.0534,
+        "annual_ghi": 0.0644,
+        "tariff_2kw_2024": -0.0533,
+        "tariff_2kw_2025": -0.0262,
+        "re_2025": 0.0101,
+        "installations": 0.0029
+      },
+      "values": {
+        "tariff_growth_frac": -0.126,
+        "annual_ghi": 5.481,
+        "tariff_2kw_2024": 8.73,
+        "tariff_2kw_2025": 7.63,
+        "re_2025": 23917.64,
+        "installations": 24054.0
+      }
+    },
+    "Kerala": {
+      "prediction": 0.7005,
+      "actual": 0.758,
+      "shap": {
+        "tariff_growth_frac": 0.0294,
+        "annual_ghi": 0.0757,
+        "tariff_2kw_2024": 0.0166,
+        "tariff_2kw_2025": 0.0101,
+        "re_2025": 0.0145,
+        "installations": 0.0049
+      },
+      "values": {
+        "tariff_growth_frac": 0.03,
+        "annual_ghi": 5.402,
+        "tariff_2kw_2024": 5.92,
+        "tariff_2kw_2025": 6.1,
+        "re_2025": 3853.38,
+        "installations": 329500.0
+      }
+    },
+    "Madhya Pradesh": {
+      "prediction": 0.6042,
+      "actual": 0.7411,
+      "shap": {
+        "tariff_growth_frac": -0.0153,
+        "annual_ghi": 0.0746,
+        "tariff_2kw_2024": -0.0129,
+        "tariff_2kw_2025": -0.0234,
+        "re_2025": 0.0138,
+        "installations": 0.0182
+      },
+      "values": {
+        "tariff_growth_frac": 0.0,
+        "annual_ghi": 5.223,
+        "tariff_2kw_2024": 8.715,
+        "tariff_2kw_2025": 8.715,
+        "re_2025": 10827.7,
+        "installations": 169991.0
+      }
+    },
+    "Maharashtra": {
+      "prediction": 0.525,
+      "actual": 0.5035,
+      "shap": {
+        "tariff_growth_frac": 0.024,
+        "annual_ghi": 0.0547,
+        "tariff_2kw_2024": -0.0631,
+        "tariff_2kw_2025": -0.044,
+        "re_2025": 0.0076,
+        "installations": -0.0034
+      },
+      "values": {
+        "tariff_growth_frac": 0.061,
+        "annual_ghi": 5.294,
+        "tariff_2kw_2024": 10.18,
+        "tariff_2kw_2025": 10.8,
+        "re_2025": 22401.46,
+        "installations": 746100.0
+      }
+    },
+    "Manipur": {
+      "prediction": 0.4805,
+      "actual": 0.4973,
+      "shap": {
+        "tariff_growth_frac": -0.0235,
+        "annual_ghi": -0.0954,
+        "tariff_2kw_2024": 0.0127,
+        "tariff_2kw_2025": 0.0099,
+        "re_2025": 0.0057,
+        "installations": 0.0219
+      },
+      "values": {
+        "tariff_growth_frac": 0.0,
+        "annual_ghi": 4.585,
+        "tariff_2kw_2024": 6.18,
+        "tariff_2kw_2025": 6.18,
+        "re_2025": 124.24,
+        "installations": 1736.0
+      }
+    },
+    "Meghalaya": {
+      "prediction": 0.2635,
+      "actual": 0.1826,
+      "shap": {
+        "tariff_growth_frac": -0.0595,
+        "annual_ghi": -0.1763,
+        "tariff_2kw_2024": 0.0094,
+        "tariff_2kw_2025": 0.0044,
+        "re_2025": -0.0247,
+        "installations": -0.0389
+      },
+      "values": {
+        "tariff_growth_frac": -0.089,
+        "annual_ghi": 4.287,
+        "tariff_2kw_2024": 5.6,
+        "tariff_2kw_2025": 5.1,
+        "re_2025": 395.11,
+        "installations": 40.0
+      }
+    },
+    "Mizoram": {
+      "prediction": 0.7397,
+      "actual": 0.9291,
+      "shap": {
+        "tariff_growth_frac": -0.0141,
+        "annual_ghi": 0.0403,
+        "tariff_2kw_2024": 0.0407,
+        "tariff_2kw_2025": 0.0243,
+        "re_2025": 0.0112,
+        "installations": 0.0881
+      },
+      "values": {
+        "tariff_growth_frac": 0.0,
+        "annual_ghi": 4.724,
+        "tariff_2kw_2024": 6.5,
+        "tariff_2kw_2025": 6.5,
+        "re_2025": 135.86,
+        "installations": 1442.0
+      }
+    },
+    "Nagaland": {
+      "prediction": 0.4924,
+      "actual": 0.5762,
+      "shap": {
+        "tariff_growth_frac": 0.0369,
+        "annual_ghi": -0.1554,
+        "tariff_2kw_2024": 0.0095,
+        "tariff_2kw_2025": 0.0115,
+        "re_2025": 0.0065,
+        "installations": 0.0341
+      },
+      "values": {
+        "tariff_growth_frac": 0.049,
+        "annual_ghi": 4.308,
+        "tariff_2kw_2024": 6.08,
+        "tariff_2kw_2025": 6.38,
+        "re_2025": 110.84,
+        "installations": 488.0
+      }
+    },
+    "Odisha": {
+      "prediction": 0.5619,
+      "actual": 0.585,
+      "shap": {
+        "tariff_growth_frac": -0.0483,
+        "annual_ghi": 0.0227,
+        "tariff_2kw_2024": 0.0143,
+        "tariff_2kw_2025": 0.0059,
+        "re_2025": 0.0098,
+        "installations": 0.0083
+      },
+      "values": {
+        "tariff_growth_frac": -0.021,
+        "annual_ghi": 4.835,
+        "tariff_2kw_2024": 4.72,
+        "tariff_2kw_2025": 4.62,
+        "re_2025": 2958.84,
+        "installations": 183431.0
+      }
+    },
+    "Punjab": {
+      "prediction": 0.6972,
+      "actual": 0.6943,
+      "shap": {
+        "tariff_growth_frac": 0.015,
+        "annual_ghi": 0.0718,
+        "tariff_2kw_2024": 0.0242,
+        "tariff_2kw_2025": 0.0138,
+        "re_2025": 0.0122,
+        "installations": 0.011
+      },
+      "values": {
+        "tariff_growth_frac": 0.019,
+        "annual_ghi": 5.225,
+        "tariff_2kw_2024": 6.68,
+        "tariff_2kw_2025": 6.81,
+        "re_2025": 3270.42,
+        "installations": 18521.0
+      }
+    },
+    "Rajasthan": {
+      "prediction": 0.6291,
+      "actual": 0.6542,
+      "shap": {
+        "tariff_growth_frac": 0.0109,
+        "annual_ghi": 0.0727,
+        "tariff_2kw_2024": -0.0102,
+        "tariff_2kw_2025": -0.0212,
+        "re_2025": 0.017,
+        "installations": 0.0108
+      },
+      "values": {
+        "tariff_growth_frac": 0.016,
+        "annual_ghi": 5.436,
+        "tariff_2kw_2024": 8.2,
+        "tariff_2kw_2025": 8.33,
+        "re_2025": 34136.34,
+        "installations": 301362.0
+      }
+    },
+    "Sikkim": {
+      "prediction": 0.3966,
+      "actual": 0.4846,
+      "shap": {
+        "tariff_growth_frac": -0.026,
+        "annual_ghi": -0.1781,
+        "tariff_2kw_2024": 0.0147,
+        "tariff_2kw_2025": 0.0167,
+        "re_2025": 0.0026,
+        "installations": 0.0175
+      },
+      "values": {
+        "tariff_growth_frac": 0.0,
+        "annual_ghi": 4.07,
+        "tariff_2kw_2024": 2.35,
+        "tariff_2kw_2025": 2.35,
+        "re_2025": 2344.67,
+        "installations": 63.0
+      }
+    },
+    "Tamil Nadu": {
+      "prediction": 0.7606,
+      "actual": 0.8587,
+      "shap": {
+        "tariff_growth_frac": 0.0354,
+        "annual_ghi": 0.0826,
+        "tariff_2kw_2024": 0.0341,
+        "tariff_2kw_2025": 0.0271,
+        "re_2025": 0.0141,
+        "installations": 0.0181
+      },
+      "values": {
+        "tariff_growth_frac": 0.046,
+        "annual_ghi": 5.222,
+        "tariff_2kw_2024": 2.81,
+        "tariff_2kw_2025": 2.94,
+        "re_2025": 25241.36,
+        "installations": 92186.0
+      }
+    },
+    "Telangana": {
+      "prediction": 0.6739,
+      "actual": 0.6898,
+      "shap": {
+        "tariff_growth_frac": -0.0183,
+        "annual_ghi": 0.0833,
+        "tariff_2kw_2024": 0.0159,
+        "tariff_2kw_2025": 0.0088,
+        "re_2025": 0.0189,
+        "installations": 0.0161
+      },
+      "values": {
+        "tariff_growth_frac": 0.0,
+        "annual_ghi": 5.359,
+        "tariff_2kw_2024": 4.71,
+        "tariff_2kw_2025": 4.71,
+        "re_2025": 7688.34,
+        "installations": 59620.0
+      }
+    },
+    "Tripura": {
+      "prediction": 0.6424,
+      "actual": 0.6294,
+      "shap": {
+        "tariff_growth_frac": 0.0329,
+        "annual_ghi": 0.0175,
+        "tariff_2kw_2024": 0.0143,
+        "tariff_2kw_2025": 0.0182,
+        "re_2025": -0.001,
+        "installations": 0.0113
+      },
+      "values": {
+        "tariff_growth_frac": 0.075,
+        "annual_ghi": 4.735,
+        "tariff_2kw_2024": 6.26,
+        "tariff_2kw_2025": 6.73,
+        "re_2025": 37.25,
+        "installations": 4938.0
+      }
+    },
+    "Uttar Pradesh": {
+      "prediction": 0.6151,
+      "actual": 0.6481,
+      "shap": {
+        "tariff_growth_frac": 0.0061,
+        "annual_ghi": 0.0271,
+        "tariff_2kw_2024": 0.0152,
+        "tariff_2kw_2025": 0.0098,
+        "re_2025": 0.017,
+        "installations": -0.0092
+      },
+      "values": {
+        "tariff_growth_frac": 0.002,
+        "annual_ghi": 4.877,
+        "tariff_2kw_2024": 6.045,
+        "tariff_2kw_2025": 6.055,
+        "re_2025": 6223.91,
+        "installations": 774505.0
+      }
+    },
+    "Uttarakhand": {
+      "prediction": 0.6642,
+      "actual": 0.726,
+      "shap": {
+        "tariff_growth_frac": 0.0335,
+        "annual_ghi": 0.0276,
+        "tariff_2kw_2024": 0.0164,
+        "tariff_2kw_2025": 0.0085,
+        "re_2025": 0.0159,
+        "installations": 0.0131
+      },
+      "values": {
+        "tariff_growth_frac": 0.089,
+        "annual_ghi": 5.005,
+        "tariff_2kw_2024": 4.73,
+        "tariff_2kw_2025": 5.15,
+        "re_2025": 5010.77,
+        "installations": 102610.0
+      }
+    },
+    "West Bengal": {
+      "prediction": 0.2245,
+      "actual": 0.097,
+      "shap": {
+        "tariff_growth_frac": -0.0346,
+        "annual_ghi": -0.1741,
+        "tariff_2kw_2024": -0.0256,
+        "tariff_2kw_2025": -0.0351,
+        "re_2025": -0.0513,
+        "installations": -0.004
+      },
+      "values": {
+        "tariff_growth_frac": 0.0,
+        "annual_ghi": 4.572,
+        "tariff_2kw_2024": 7.145,
+        "tariff_2kw_2025": 7.145,
+        "re_2025": 2112.18,
+        "installations": 4792.0
+      }
+    }
+  },
+  "global_importance": {
+    "tariff_growth_frac": 0.0298,
+    "annual_ghi": 0.0773,
+    "tariff_2kw_2024": 0.0201,
+    "tariff_2kw_2025": 0.0176,
+    "re_2025": 0.0161,
+    "installations": 0.0181
+  }
+}

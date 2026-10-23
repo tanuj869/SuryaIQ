@@ -1,0 +1,171 @@
+{
+  "n_states": 36,
+  "dataset_usage": {
+    "1 Registrations/Applications/Households": "funnel + reg_to_app ratio (features)",
+    "2 Installations": "installation target (reconciled with file 4)",
+    "4 District/DISCOM Application-Installation": "canonical applications/installations/subsidy/capacity target + features",
+    "5.1/5.2 Tariff 2024/2025": "tariff feature + tariff-change + payback proxy",
+    "6 Solar potential": "potential-utilization + suitability (feature)",
+    "9 Solar irradiance": "annual GHI + seasonality (feature)",
+    "10.1 RE/Non-RE two points": "RE share + CAGR (features)",
+    "10.2 RE-capacity annual panel": "SARIMAX/Holt time-series forecast target",
+    "7 ToD regime (PDF)": "RAG corpus (image-based; OCR pending)"
+  },
+  "models": {
+    "conversion_regression": {
+      "target": "conversion_ratio (installations/applications)",
+      "features_used": [
+        "subsidy_per_install_rs",
+        "subsidy_released_cr",
+        "reg_to_app_ratio",
+        "app_per_lakh",
+        "n_districts",
+        "potential_utilization",
+        "tariff_2kw_2025",
+        "solar_potential_gw",
+        "annual_ghi",
+        "re_share_2025",
+        "re_cagr_18_25"
+      ],
+      "model_comparison_LOSO": {
+        "linear_regression": {
+          "loso_mae": 0.2194,
+          "loso_r2": -0.628
+        },
+        "random_forest": {
+          "loso_mae": 0.1721,
+          "loso_r2": 0.096
+        },
+        "gradient_boosting": {
+          "loso_mae": 0.1912,
+          "loso_r2": -0.058
+        },
+        "best_model": "random_forest"
+      },
+      "feature_importance": [
+        {
+          "feature": "potential_utilization",
+          "importance": 0.227
+        },
+        {
+          "feature": "app_per_lakh",
+          "importance": 0.174
+        },
+        {
+          "feature": "re_share_2025",
+          "importance": 0.146
+        },
+        {
+          "feature": "subsidy_per_install_rs",
+          "importance": 0.114
+        },
+        {
+          "feature": "n_districts",
+          "importance": 0.062
+        },
+        {
+          "feature": "annual_ghi",
+          "importance": 0.06
+        }
+      ],
+      "subsidy_paradox_verdict": "implementation-quality features alone achieve MAE 0.1785 vs 0.1944 for subsidy-amount alone \u2014 supporting the subsidy-paradox hypothesis at state level (associational)."
+    },
+    "topquartile_classification": {
+      "target": "top-quartile conversion state (>= p75)",
+      "loso_accuracy": 0.722,
+      "loso_f1": 0.286,
+      "positive_rate": 0.25
+    },
+    "re_capacity_forecast": {
+      "target": "RE installed capacity (MW), annual",
+      "benchmarks": [
+        "naive",
+        "linear",
+        "holt",
+        "sarimax"
+      ],
+      "per_state": {
+        "Maharashtra": {
+          "best_model": "sarimax",
+          "backtest_mae": {
+            "naive": 2899.1,
+            "linear": 2651.8,
+            "holt": 1895.9,
+            "sarimax": 1893.1
+          }
+        },
+        "Gujarat": {
+          "best_model": "holt",
+          "backtest_mae": {
+            "naive": 4938.4,
+            "linear": 3537.5,
+            "holt": 1396.3,
+            "sarimax": 3146.3
+          }
+        },
+        "Rajasthan": {
+          "best_model": "holt",
+          "backtest_mae": {
+            "naive": 5561.6,
+            "linear": 4824.5,
+            "holt": 4491.6,
+            "sarimax": 5594.4
+          }
+        },
+        "Kerala": {
+          "best_model": "sarimax",
+          "backtest_mae": {
+            "naive": 442.1,
+            "linear": 465.4,
+            "holt": 220.7,
+            "sarimax": 188.2
+          }
+        },
+        "Uttar Pradesh": {
+          "best_model": "linear",
+          "backtest_mae": {
+            "naive": 412.9,
+            "linear": 60.9,
+            "holt": 66.9,
+            "sarimax": 335.5
+          }
+        }
+      }
+    },
+    "installation_projection": {
+      "Maharashtra": {
+        "state": "Maharashtra",
+        "target": "PM Surya Ghar installations (cumulative)",
+        "current_installations": 746100,
+        "horizon_months": 12,
+        "annual_growth_used": 0.1,
+        "projected_installations": 820468,
+        "projected_additional": 74368,
+        "method": "growth proxy (RE-capacity CAGR applied to installation snapshot)",
+        "caveat": "Indicative only \u2014 installations are a single snapshot, not a monthly series; this is a growth projection, not a fitted forecast."
+      },
+      "Bihar": {
+        "state": "Bihar",
+        "target": "PM Surya Ghar installations (cumulative)",
+        "current_installations": 26128,
+        "horizon_months": 12,
+        "annual_growth_used": 0.065,
+        "projected_installations": 27835,
+        "projected_additional": 1707,
+        "method": "growth proxy (RE-capacity CAGR applied to installation snapshot)",
+        "caveat": "Indicative only \u2014 installations are a single snapshot, not a monthly series; this is a growth projection, not a fitted forecast."
+      },
+      "Rajasthan": {
+        "state": "Rajasthan",
+        "target": "PM Surya Ghar installations (cumulative)",
+        "current_installations": 301362,
+        "horizon_months": 12,
+        "annual_growth_used": 0.247,
+        "projected_installations": 375731,
+        "projected_additional": 74369,
+        "method": "growth proxy (RE-capacity CAGR applied to installation snapshot)",
+        "caveat": "Indicative only \u2014 installations are a single snapshot, not a monthly series; this is a growth projection, not a fitted forecast."
+      }
+    }
+  }
+}

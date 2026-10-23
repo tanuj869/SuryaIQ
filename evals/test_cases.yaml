@@ -1,0 +1,133 @@
+# SuryaIQ evaluation cases. Each: a query, the expected intent, and a check.
+# checks: contains (substring in rendered answer), intent (routed intent),
+#         rejected (guardrail must reject), has_sources (>=1 non-guardrail source)
+- id: Q1
+  query: "Which state has the highest conversion ratio, Mizoram or Bihar?"
+  intent: rank
+  checks:
+    intent: rank
+    contains: "Mizoram"
+    has_sources: true
+
+- id: Q2
+  query: "What is Gujarat's conversion ratio?"
+  intent: lookup
+  checks:
+    intent: lookup
+    contains: "68.0%"
+    has_sources: true
+
+- id: Q3
+  query: "What if subsidy increases by 10%?"
+  intent: scenario
+  checks:
+    intent: scenario
+    contains: "not supportable"
+    has_sources: true
+
+- id: Q4
+  query: "Forecast Maharashtra RE capacity for the next 3 years"
+  intent: forecast
+  checks:
+    intent: forecast
+    contains: "MW"
+    has_sources: true
+
+- id: Q5
+  query: "Why does the subsidy paradox matter for PM Surya Ghar?"
+  intent: explain
+  checks:
+    intent: explain
+    contains: "subsidy"
+    has_sources: true
+
+- id: Q6
+  query: "Predict installations for Mars"
+  intent: rejected
+  checks:
+    rejected: true
+
+- id: Q7
+  query: "Who will win the next election?"
+  intent: rejected
+  checks:
+    rejected: true
+
+- id: Q8
+  query: "Compare Rajasthan and West Bengal conversion"
+  intent: compare
+  checks:
+    intent: compare
+    contains: "Rajasthan"
+    has_sources: true
+
+- id: Q9
+  query: "Which state has the highest installation?"
+  intent: rank
+  checks:
+    intent: rank
+    contains: "Gujarat"
+    has_sources: true
+
+- id: Q10
+  query: "Top 5 states by conversion ratio"
+  intent: rank
+  checks:
+    intent: rank
+    contains: "Mizoram"
+    has_sources: true
+
+- id: Q11
+  query: "How many states have conversion above 50%?"
+  intent: aggregate
+  checks:
+    intent: aggregate
+    contains: "23"
+    has_sources: true
+
+- id: Q12
+  query: "What is the national conversion rate?"
+  intent: aggregate
+  checks:
+    intent: aggregate
+    contains: "57.1%"
+    has_sources: true
+
+# --- report Table-5 capability coverage ---
+- id: Q13
+  query: "Which state had the highest adoption?"
+  intent: rank
+  checks:
+    intent: rank
+    contains: "Gujarat"
+    has_sources: true
+
+- id: Q14
+  query: "Forecast installations for the next 12 months"
+  intent: forecast
+  checks:
+    intent: forecast
+    contains: "projection"
+    has_sources: true
+
+- id: Q15
+  query: "Summarize the latest MNRE report"
+  intent: retrieve
+  checks:
+    intent: retrieve
+    has_sources: true
+
+- id: Q16
+  query: "Generate a policy recommendation"
+  intent: recommend
+  checks:
+    intent: recommend
+    contains: "prioritize"
+    has_sources: true
+
+- id: Q17
+  query: "Show supporting evidence from government reports"
+  intent: retrieve
+  checks:
+    intent: retrieve
+    has_sources: true

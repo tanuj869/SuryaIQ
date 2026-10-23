@@ -1,0 +1,21 @@
+services:
+  suryaiq:
+    build: .
+    container_name: suryaiq
+    ports:
+      - "8000:8000"   # FastAPI
+      - "8530:8530"   # Streamlit dashboard
+    environment:
+      - PYTHONUNBUFFERED=1
+      # Uncomment one to enable LLM polish (also drop a .env file next to this one)
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    env_file:
+      - path: ./.env
+        required: false
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped

@@ -1,0 +1,32 @@
+name: SuryaIQ CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Build data pipeline
+        run: |
+          cd src
+          python build_panel.py
+          python paper_analysis.py
+          python explain.py
+      - name: Unit tests
+        run: pytest -q
+      - name: Assistant evals
+        run: cd ai && python evals.py
+      - name: Report-feature verification
+        run: cd ai && python verify_report.py

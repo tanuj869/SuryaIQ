@@ -1,0 +1,157 @@
+{
+  "title": "Explaining State-Level Variation in PM Surya Ghar Rooftop Solar Adoption: A Data-Driven Analysis of the Subsidy Paradox",
+  "conversion_range": {
+    "min": 0.015,
+    "min_state": "Arunachal Pradesh",
+    "max": 0.929,
+    "max_state": "Mizoram"
+  },
+  "table1_correlations": [
+    {
+      "feature": "Solar irradiance (kWh/m2/day)",
+      "r": 0.564,
+      "n": 28
+    },
+    {
+      "feature": "Tariff growth % (2024->2025)",
+      "r": 0.427,
+      "n": 35
+    },
+    {
+      "feature": "Tariff level 2024 (Rs/kWh)",
+      "r": -0.262,
+      "n": 35
+    },
+    {
+      "feature": "Tariff level 2025 (Rs/kWh)",
+      "r": -0.195,
+      "n": 35
+    },
+    {
+      "feature": "MNRE RE capacity 2025 (MW)",
+      "r": 0.131,
+      "n": 35
+    },
+    {
+      "feature": "Installations (Aug 2026)",
+      "r": 0.096,
+      "n": 36
+    },
+    {
+      "feature": "Households benefited",
+      "r": 0.092,
+      "n": 35
+    },
+    {
+      "feature": "Solar potential 6.69% (GW)",
+      "r": 0.081,
+      "n": 35
+    },
+    {
+      "feature": "Applications (Aug 2026)",
+      "r": 0.007,
+      "n": 36
+    }
+  ],
+  "table2_model_comparison": {
+    "linear_2feature": {
+      "features": [
+        "tariff_growth_frac",
+        "annual_ghi"
+      ],
+      "loo_cv_mae": 0.143,
+      "vs_naive_pct": -20.0
+    },
+    "random_forest_6feature": {
+      "features": [
+        "tariff_growth_frac",
+        "annual_ghi",
+        "tariff_2kw_2024",
+        "tariff_2kw_2025",
+        "re_2025",
+        "installations"
+      ],
+      "loo_cv_mae": 0.164,
+      "vs_naive_pct": -8.0
+    },
+    "winner": "linear_2feature",
+    "equation": {
+      "intercept": -0.877,
+      "coef_tariff_growth": 1.236,
+      "coef_irradiance": 0.285,
+      "in_sample_r2": 0.456,
+      "n": 28
+    },
+    "verdict": "The 2-feature linear model (tariff growth + irradiance) generalizes better than the 6-feature RandomForest under LOO-CV; subsidy/tariff LEVEL is among the weakest predictors. This reproduces the subsidy-paradox finding: administrative and physical-resource factors, not subsidy size, explain state conversion efficiency (correlational, not causal)."
+  },
+  "table3_national_forecast": {
+    "in_sample_mape": {
+      "naive": 22.23,
+      "linear": 8.29,
+      "log_linear": 1.18
+    },
+    "best": "log_linear",
+    "horizons": [
+      {
+        "horizon_months": 3,
+        "point": 5.37,
+        "lo_M": 5.18,
+        "hi_M": 5.56
+      },
+      {
+        "horizon_months": 6,
+        "point": 6.43,
+        "lo_M": 6.16,
+        "hi_M": 6.72
+      },
+      {
+        "horizon_months": 12,
+        "point": 9.25,
+        "lo_M": 8.73,
+        "hi_M": 9.8
+      }
+    ],
+    "note": "Log-linear extrapolation from 6 dated national releases (Nov 2024-Aug 2026). Thin basis; exponential assumption overstates long-horizon if growth slows."
+  },
+  "table4_scenario_support": {
+    "assessment": [
+      {
+        "scenario": "A - Base case",
+        "supported": "Yes",
+        "why": "Direct model application"
+      },
+      {
+        "scenario": "B - Subsidy +10%",
+        "supported": "No",
+        "why": "Subsidy top-up data deliberately scoped out; model has no subsidy feature"
+      },
+      {
+        "scenario": "C - High-potential targeting",
+        "supported": "Yes",
+        "why": "Data-driven: Maharashtra, Karnataka, Andhra Pradesh, Odisha"
+      },
+      {
+        "scenario": "D - Tariff increase",
+        "supported": "Yes",
+        "why": "Uses the fitted tariff-growth coefficient directly"
+      },
+      {
+        "scenario": "E - Combined",
+        "supported": "Partial",
+        "why": "Tariff component only; subsidy component inherits B's limitation"
+      }
+    ],
+    "scenario_D_tariff_shock_conversion_lift": {
+      "+5pp": "+6.2pp",
+      "+10pp": "+12.4pp",
+      "+15pp": "+18.5pp"
+    },
+    "targets_high_potential_low_adoption": [
+      "Maharashtra",
+      "Karnataka",
+      "Andhra Pradesh",
+      "Odisha"
+    ],
+    "caveat": "Linear, no interaction terms -> uniform lift across states is a modeling limitation, not a real-world claim. Predicted under model assumptions, not causal."
+  }
+}
